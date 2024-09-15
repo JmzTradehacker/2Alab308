@@ -74,3 +74,23 @@ const additionalSpaceRequired = requiredSpace - area;
 // Calculating the new radius of the expanded garden
 const newRadius = Math.sqrt(requiredSpace / PI);
   console.log("New radius of the expanded garden:", newRadius.toFixed(2), "meters");
+
+//Part 3
+
+const initialPlants3 = 100;
+
+// Calculating the required space for 100 plants
+const reqSpace = initialPlants3 * minSpace;
+
+console.log("Required space for 100 plants:", reqSpace, "square meters");
+console.log("Available garden area:", area.toFixed(2), "square meters");
+
+try {
+  if (reqSpace > area) {
+    throw new Error("Insufficient space: The plants have exceeded the garden's capacity.");
+  } else {
+    console.log("The plants fit within the garden.");
+  }
+} catch (error) {
+  console.error("Error:", error.message);
+}
